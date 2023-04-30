@@ -1,6 +1,12 @@
+/* carousel inicial */
 .carousel{
     height: 75vh;
 }
 .tamanio-carousel{
   height: 75vh;
+}
+
+/* carousel ambientes */
+.carousel-ambientes{
+  height:250px;
 }
