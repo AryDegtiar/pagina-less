@@ -97,7 +97,20 @@ body{
   /*background-color: rgba(0, 0, 0, 0.7);*/
   padding: 20px;
   color: white;
-  padding-left: 100px;
+  padding-left: 10px;
+}
+@media (min-width: 1200px) {
+  .carousel-texto {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+    /*background-color: rgba(0, 0, 0, 0.7);*/
+    padding: 20px;
+    color: white;
+    padding-left: 100px;
+  }
 }
 
 /* carousel ambientes */
