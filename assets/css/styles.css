@@ -1,13 +1,54 @@
 /* general */
-section{
-  margin-bottom: 80px;
+*{
+  font-family: "Share Tech Mono", Sans-serif;
+} 
+
+body{
+  background-color: #000000;
 }
 
 .bg-cement{
   background-color: #656565 ;
 }
 
-#testimonios {
+.bg-black{
+  background-color: #000000;
+}
+
+.text-cement{
+  color: #656565;
+}
+
+.text-orange{
+  color: #b7b7b7;
+}
+
+.opacity-40{
+  opacity: 0.4
+}
+
+.fw-600{
+  font-weight: 600;
+}
+
+.btn.btn-wood {
+  background-color: #c9a47e;
+  color: #fff;
+  border-color: #c9a47e;
+}
+
+.btn.btn-wood:hover {
+  background-color: #70573e;
+  color: #fff;
+  border-color: #70573e;
+}
+
+.text-size-5{
+  font-size: 4rem;
+  line-height : 1rem;
+}
+
+.testimonios {
   background-image: url('../images/abstract-g21d9c2eac_1920.jpg');
   animation: slide 25s linear infinite;
 }
@@ -42,10 +83,21 @@ section{
 
 /* carousel inicial */
 .carousel{
-    height: 75vh;
+    height: 85vh;
 }
 .tamanio-carousel{
-  height: 75vh;
+  height: 85vh;
+}
+.carousel-texto {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  /*background-color: rgba(0, 0, 0, 0.7);*/
+  padding: 20px;
+  color: white;
+  padding-left: 100px;
 }
 
 /* carousel ambientes */
@@ -66,21 +118,31 @@ section{
   transition: transform 0.5s ease;
 }
 
-/* portafolio */
-#portafolio img{
+/* proyectos */
+#proyectos img{
   max-height: 400px;
+  transition: transform 0.3s ease-in-out;
+}
+
+h1 .text-white{
+  color: #fff;
+}
+
+.col-12{
+  overflow: hidden; 
 }
 
 .img-hover {
   position: relative;
 }
 
-.img-hover img {
+.img-hover .oscurecer {
   transition: opacity 0.3s ease-in-out;
 }
 
-.img-hover:hover img {
-  opacity: 0.5;
+.img-hover:hover .oscurecer {
+  transform: scale(1.2);
+  opacity: 0.2;
 }
 
 .overlay {
@@ -92,6 +154,8 @@ section{
   transition: opacity 0.3s ease-in-out;
   text-align: center;
   color: #fff;
+  padding: 0;
+  margin: 0;
 }
 
 .img-hover:hover .overlay {

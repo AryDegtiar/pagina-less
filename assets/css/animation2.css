@@ -4,12 +4,12 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
-  height: 60vh; /* Ajusta la altura al 100% del viewport */
+  min-height: 60vh; /* Ajusta la altura al 100% del viewport */
 }
 
 .parallax::before {
   content: "";
-  background: rgba(0, 0, 0, 0.5);
+  /*background: rgba(0, 0, 0, 0.5);*/
   position: absolute;
   top: 0;
   left: 0;
