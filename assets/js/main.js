@@ -1,47 +1,44 @@
-$(document).ready(function() {
-    $(window).scroll(function() {
-      var scrollTop = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      var parallaxHeight = $('.parallax').outerHeight();
-      var offset = $('.parallax').offset().top;
-      var percentScrolled = (scrollTop + windowHeight - offset) / (parallaxHeight + windowHeight);
-      var parallaxPosition = Math.round((percentScrolled - 0.5) * 100);
-      $('.parallax').css('background-position', '50% ' + parallaxPosition + '%');
+/* modal */
+function openModal(title, body, customVariable) {
+    console.log('openModal');
+    const modalTitle = document.querySelector('.modal-title');
+    const modalBody = document.querySelector('.modal-body');
+  
+    modalTitle.innerHTML = title;
+    modalBody.innerHTML = body + "<p>Variable personalizada: " + customVariable + "</p>";
+  
+    const modalElement = document.getElementById('exampleModal');
+    const modal = new bootstrap.Modal(modalElement);
+  
+    const closeButton = modalElement.querySelector('.btn-close');
+    closeButton.addEventListener('click', () => {
+      modal.hide();
+  
+      const backdropElements = document.querySelectorAll('.modal-backdrop');
+      backdropElements.forEach((element) => {
+        element.remove();
+      });
     });
+  
+    modalElement.addEventListener('hidden.bs.modal', () => {
+      modal.dispose();
+      modalElement.classList.remove('modal-backdrop');
+    });
+  
+    modal.show();
+  }
+  
+  const launchDemoModal = document.querySelector('.modal-link');
+  launchDemoModal.addEventListener('click', (event) => {
+    event.preventDefault();
+    const modalTitle = 'Modal title desde js';
+    const modalBody = `
+      <img src="./images/1.jpg" class="d-block w-100 tamanio-carousel" alt="...">
+      <p>Modal body text goes here.</p>
+    `;
+    const customVariable = launchDemoModal.getAttribute('data-custom-variable');
+  
+    openModal(modalTitle, modalBody, customVariable);
   });
-/*
-// Seleccionar el carousel
-var carousel = document.querySelector('#carouselExampleCaptions');
-
-// Crear el evento de cambio de slide
-var slideEvent = new Event('slide.bs.carousel');
-
-// Función para cambiar de slide
-function cambiarSlide() {
-    // Obtener el índice del slide activo
-    var indice = carousel.querySelector('.carousel-item.active').dataset.bsTarget;
-    
-    // Obtener el índice del siguiente slide
-    var siguienteIndice = parseInt(indice) + 1;
-    if (siguienteIndice >= carousel.querySelectorAll('.carousel-item').length) {
-        siguienteIndice = 0;
-    }
-    
-    // Disparar el evento de cambio de slide
-    carousel.querySelector('[data-bs-slide-to="' + siguienteIndice + '"]').dispatchEvent(slideEvent);
-}
-
-// Iniciar el cambio de slides automático
-var intervalo = setInterval(cambiarSlide, 100);
-
-
-// Detener el cambio de slides automático al hacer hover sobre el carousel
-carousel.addEventListener('mouseover', function() {
-    clearInterval(intervalo);
-});
-
-// Reanudar el cambio de slides automático al quitar el hover sobre el carousel
-carousel.addEventListener('mouseout', function() {
-    intervalo = setInterval(cambiarSlide, 100);
-});
-*/
+  
+  
