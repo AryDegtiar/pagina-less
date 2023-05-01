@@ -1,3 +1,26 @@
+/* general */
+section{
+  margin-bottom: 80px;
+}
+
+@media (min-width: 1200px) {
+  h5.px-xl-10 {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  h5.px-xl-7 {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}
+
+.subtitulo3{
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #646262;
+  margin-bottom: 20px;
+}
+
 /* carousel inicial */
 .carousel{
     height: 75vh;
@@ -9,4 +32,19 @@
 /* carousel ambientes */
 .carousel-ambientes{
   height:250px;
+}
+
+/* testimonios */
+.rating {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.rating .fa {
+  color: yellow;
+}
+
+.card-zoom:hover {
+  transform: scale(1.08);
+  transition: transform 0.5s ease;
 }
