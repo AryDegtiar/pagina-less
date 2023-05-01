@@ -48,11 +48,18 @@ body{
   line-height : 1rem;
 }
 
+.input{
+  border: 1px solid rgb(32, 32, 32);
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  background-color: gray;
+}
+
 .testimonios {
   background-image: url('../images/abstract-g21d9c2eac_1920.jpg');
   animation: slide 25s linear infinite;
 }
-
 @keyframes slide {
   from { background-position: 0 0; }
   to { background-position: 100% 0; }
@@ -173,4 +180,30 @@ h1 .text-white{
 
 .img-hover:hover .overlay {
   opacity: 1;
+}
+
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #1d1d1d;
+}
+
+/* Estilo para el cursor de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background-color: #de682d;
+  border-radius: 5px;
+}
+
+/*  loading  */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
