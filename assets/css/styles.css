@@ -221,3 +221,6 @@ h1 .text-white{
 .offcanvas-container.visible {
   display: block;
 }
+.offcanvas {
+  max-width: 90%;
+}
