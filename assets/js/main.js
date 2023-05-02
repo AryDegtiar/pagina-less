@@ -81,13 +81,8 @@ function openModal(proyecto) {
 
 modalLinks.forEach((modalLink) => {
   modalLink.addEventListener('click', () => {
-    console.log('se hizo click y se entro en modallink');
-    console.log(modalLink.dataset.customVariable);
     proyectoId = modalLink.dataset.customVariable; // Obtiene el id del proyecto del atributo data-custom-variable del elemento modalLink
     proyecto = proyectos.find((p) => p.id === proyectoId); // Busca el objeto proyecto correspondiente en el arreglo de proyectos
-    console.log(proyecto);
     openModal(proyecto);
   });
 });
-
-
