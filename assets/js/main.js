@@ -8,6 +8,22 @@ window.addEventListener('scroll', function() {
     offcanvasContainer.classList.remove('visible');
   }
 });
+
+var links = document.querySelectorAll('.list-group-item a');
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', function() {
+    console.log('Haz hecho clic en un enlace');
+    var offcanvas = document.querySelector('.offcanvas');
+    var offcanvasBackdrop = document.querySelector('.offcanvas-backdrop');
+    var offcanvasInstance = new bootstrap.Offcanvas(offcanvas);
+    offcanvas.classList.remove('show'); // remove the "show" class from the offcanvas element
+    offcanvasBackdrop.remove(); // remove the backdrop element
+    offcanvasInstance.hide();
+  });
+}
+
+
+
 /* FIN NAVBAR HAMBURGESA */
 
 const modalLinks = document.querySelectorAll('.modal-link');

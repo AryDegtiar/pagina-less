@@ -64,6 +64,10 @@ body{
   z-index: 9999;
 }
 
+.h-80{
+  height: 80vh;
+}
+
 .testimonios {
   background-image: url('../images/abstract-g21d9c2eac_1920.jpg');
   animation: slide 25s linear infinite;
@@ -222,5 +226,5 @@ h1 .text-white{
   display: block;
 }
 .offcanvas {
-  max-width: 90%;
+  max-width: 80%;
 }
