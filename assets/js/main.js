@@ -22,8 +22,53 @@ for (var i = 0; i < links.length; i++) {
   });
 }
 
+/*INICIO CMABIAR COLOS HAMBURGESA */
+const icono = document.querySelector('.navbar-toggler i');
 
+function esClaro(valorLuminosidad) {
+  if (valorLuminosidad > 0.5) {
+    icono.style.color = 'black';
+    icono.style.border = '3px solid black';
+  } else {
+    icono.style.color = 'white';
+    icono.style.border = '2px solid white';
+  }
+}
 
+function verificarColorFondo() {
+  const cuadrado = document.querySelector('#cuadrado');
+  const rect = cuadrado.getBoundingClientRect();
+  const secciones = document.querySelectorAll('section');
+  for (let i = 0; i < secciones.length; i++) {
+    const seccionRect = secciones[i].getBoundingClientRect();
+    if (rect.top >= seccionRect.top && rect.bottom <= seccionRect.bottom) {
+      const computedStyle = getComputedStyle(secciones[i]);
+      const backgroundColor = computedStyle.getPropertyValue('background-color');
+      if (backgroundColor !== 'rgba(0, 0, 0, 0)' && backgroundColor !== 'transparent') {
+        const valoresRGB = backgroundColor.match(/\d+/g);
+        const luminosidad = (0.299 * valoresRGB[0] + 0.587 * valoresRGB[1] + 0.114 * valoresRGB[2]) / 255;
+        esClaro(luminosidad);
+      }
+      break;
+    }
+  }
+}
+
+// Agregar el cuadrado imaginario al documento
+const cuadrado = document.createElement('div');
+cuadrado.setAttribute('id', 'cuadrado');
+cuadrado.style.width = '50px';
+cuadrado.style.height = '50px';
+cuadrado.style.position = 'fixed';
+cuadrado.style.top = '0';
+cuadrado.style.right = '0';
+cuadrado.style.backgroundColor = 'transparent';
+document.body.appendChild(cuadrado);
+
+verificarColorFondo();
+
+window.addEventListener('scroll', verificarColorFondo);
+/*FIN CMABIAR COLOS HAMBURGESA */
 /* FIN NAVBAR HAMBURGESA */
 
 const modalLinks = document.querySelectorAll('.modal-link');
