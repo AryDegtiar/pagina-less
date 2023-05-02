@@ -57,8 +57,8 @@ function verificarColorFondo() {
 // Agregar el cuadrado imaginario al documento
 const cuadrado = document.createElement('div');
 cuadrado.setAttribute('id', 'cuadrado');
-cuadrado.style.width = '30px';
-cuadrado.style.height = '30px';
+cuadrado.style.width = '1px';
+cuadrado.style.height = '1px';
 cuadrado.style.position = 'fixed';
 cuadrado.style.top = '0';
 cuadrado.style.right = '0';
