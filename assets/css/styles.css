@@ -60,6 +60,10 @@ body{
   background-color: gray;
 }
 
+.adelanteDeTodo{
+  z-index: 9999;
+}
+
 .testimonios {
   background-image: url('../images/abstract-g21d9c2eac_1920.jpg');
   animation: slide 25s linear infinite;
@@ -104,7 +108,7 @@ body{
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  z-index: 9999;
+  z-index: 10;
   /*background-color: rgba(0, 0, 0, 0.7);*/
   padding: 20px;
   color: white;
@@ -116,7 +120,7 @@ body{
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    z-index: 9999;
+    z-index: 10;
     /*background-color: rgba(0, 0, 0, 0.7);*/
     padding: 20px;
     color: white;
@@ -208,4 +212,12 @@ h1 .text-white{
 /*modal*/
 .modal-dialog {
   width: 90%;
+}
+
+/* NAVBAR Y HAMBURGESA */
+.offcanvas-container {
+  display: none;
+}
+.offcanvas-container.visible {
+  display: block;
 }

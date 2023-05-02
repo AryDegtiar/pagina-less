@@ -1,3 +1,15 @@
+/* INICIO NAVBAR HAMBURGESA */
+window.addEventListener('scroll', function() {
+  const navbarHeight = document.querySelector('header').offsetHeight;
+  const offcanvasContainer = document.querySelector('.offcanvas-container');
+  if (window.pageYOffset > navbarHeight) {
+    offcanvasContainer.classList.add('visible');
+  } else {
+    offcanvasContainer.classList.remove('visible');
+  }
+});
+/* FIN NAVBAR HAMBURGESA */
+
 const modalLinks = document.querySelectorAll('.modal-link');
 
 const proyectos = [
