@@ -107,6 +107,16 @@ body{
 .tamanio-carousel{
 height: 30vh;
 }
+.carousel-redes{
+  position: absolute;
+  top: 33vh;
+  left: 75vw;
+  transform: translateY(-50%);
+  z-index: 10;
+  /*background-color: rgba(0, 0, 0, 0.7);*/
+  color: white;
+  padding-left: 10px;
+}
 .carousel-texto {
   position: absolute;
   top: 25vh;
@@ -133,6 +143,18 @@ height: 30vh;
   object-fit: cover;
 }
 @media (min-width: 768px) {
+  .carousel-redes{
+    position: absolute;
+    top: 88vh;
+    left: 90vw;
+    transform: translateY(-50%);
+    z-index: 10;
+    /*background-color: rgba(0, 0, 0, 0.7);*/
+    color: white;
+  }
+  .carousel-redes i{
+    font-size: calc(1.275rem + .3vw)!important;
+  }
   .carousel-texto {
     position: absolute;
     top: 50%;
