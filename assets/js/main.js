@@ -1,8 +1,19 @@
 /* INICIO NAVBAR HAMBURGESA */
+window.addEventListener('load', function() {
+  const offcanvasContainer = document.querySelector('.offcanvas-container');
+  const screenWidth = parseFloat(getComputedStyle(document.body).width);
+  const isMobile = screenWidth < 768;
+  if (isMobile) {
+    offcanvasContainer.classList.add('visible');
+  }
+});
+
 window.addEventListener('scroll', function() {
   const navbarHeight = document.querySelector('header').offsetHeight;
   const offcanvasContainer = document.querySelector('.offcanvas-container');
-  if (window.pageYOffset > navbarHeight) {
+  const screenWidth = parseFloat(getComputedStyle(document.body).width);
+  const isMobile = screenWidth < 768; 
+  if (window.pageYOffset > navbarHeight || isMobile) {
     offcanvasContainer.classList.add('visible');
   } else {
     offcanvasContainer.classList.remove('visible');
